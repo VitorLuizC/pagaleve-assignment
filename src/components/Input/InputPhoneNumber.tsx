@@ -1,5 +1,6 @@
 import type { ChangeEvent, ReactElement } from 'react';
-import InputProps from './InputProps';
+import type InputProps from './InputProps';
+import InputText from './InputText';
 
 type Props = InputProps & {
   value: string;
@@ -7,23 +8,13 @@ type Props = InputProps & {
 };
 
 function InputPhoneNumber(props: Props): ReactElement {
-  const { id, value, hintId, errorId, labelId, invalid, disabled, onChange } =
-    props;
-
   return (
-    <input
-      id={id}
+    <InputText
+      {...props}
       type="tel"
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
+      className="InputPhoneNumber"
       inputMode="tel"
-      aria-invalid={invalid}
       autoComplete="tel"
-      aria-disabled={disabled}
-      aria-labelledby={labelId}
-      aria-describedby={hintId}
-      aria-errormessage={errorId}
     />
   );
 }

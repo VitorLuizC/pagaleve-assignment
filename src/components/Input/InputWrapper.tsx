@@ -27,7 +27,7 @@ function InputWrapper(props: Props): ReactElement {
   return (
     <div className="InputWrapper">
       {labelId && (
-        <label id={labelId} htmlFor={inputId}>
+        <label id={labelId} htmlFor={inputId} className="InputWrapper__label">
           {label}
         </label>
       )}
