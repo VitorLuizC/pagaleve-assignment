@@ -1,9 +1,9 @@
 import { FieldArray, useField } from 'formik';
 import type { ReactElement } from 'react';
-import ContactEmail from '../../models/ContactEmail';
 import { InputWrapper } from '../Input';
 import ContactEmailAddressField from './ContactEmailAddressField';
 import ContactEmailLabelField from './ContactEmailLabelField';
+import type { ContactEmail } from '../../models/Contact';
 
 type Props = {
   name: string;

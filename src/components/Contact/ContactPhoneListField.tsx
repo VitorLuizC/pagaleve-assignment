@@ -1,7 +1,6 @@
 import { FieldArray, useField } from 'formik';
 import type { ReactElement } from 'react';
-import ContactPhone from '../../models/ContactPhone';
-import ContactPhoneType from '../../models/ContactPhoneType';
+import { ContactPhone, ContactPhoneType } from '../../models/Contact';
 import { InputWrapper } from '../Input';
 import ContactPhoneNumberField from './ContactPhoneNumberField';
 import ContactPhoneTypeField from './ContactPhoneTypeField';

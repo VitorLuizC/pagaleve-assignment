@@ -1,7 +1,7 @@
 import { useField } from 'formik';
 import type { ReactElement } from 'react';
-import type ContactPhoneType from '../../models/ContactPhoneType';
 import { InputPhoneType, InputWrapper } from '../Input';
+import type { ContactPhoneType } from '../../models/Contact';
 
 type Props = {
   name: string;

@@ -1,4 +1,4 @@
-import { ContactPhoneType } from '../models';
+import { ContactPhoneType } from '../models/Contact';
 import fetchContactList from './fetchContactList';
 
 describe('fetchContactList | service | unit tests', () => {
