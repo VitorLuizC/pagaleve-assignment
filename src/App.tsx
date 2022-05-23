@@ -1,16 +1,8 @@
-import React, { ChangeEvent, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import InputWrapper from './components/Input/InputWrapper';
-import InputPhoneNumber from './components/Input/InputPhoneNumber';
+import ContactForm from './components/Contact/ContactForm';
 
 function App() {
-  const [phoneNumber, setPhoneNumber] = useState('');
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setPhoneNumber(event.target.value);
-  };
-
   return (
     <div className="App">
       <header className="App-header">
@@ -28,17 +20,7 @@ function App() {
         </a>
       </header>
 
-      <form action="">
-        <InputWrapper>
-          {(props) => (
-            <InputPhoneNumber
-              {...props}
-              value={phoneNumber}
-              onChange={handleChange}
-            />
-          )}
-        </InputWrapper>
-      </form>
+      <ContactForm />
     </div>
   );
 }

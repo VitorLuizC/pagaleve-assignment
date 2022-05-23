@@ -1,8 +1,9 @@
 import type ContactPhoneType from './ContactPhoneType';
 
 interface ContactPhone {
-  number: string;
+  id: string;
   type: ContactPhoneType;
+  number: string;
 }
 
 export default ContactPhone;
