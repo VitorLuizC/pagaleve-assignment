@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 import type { ReactElement } from 'react';
-import { InputPhoneNumber, InputWrapper } from '../Input';
+import { InputText, InputWrapper } from '../Input';
 
 type Props = {
   name: string;
@@ -13,7 +13,15 @@ function ContactPhoneNumberField(props: Props): ReactElement {
 
   return (
     <InputWrapper error={error} label="Phone Number">
-      {(props) => <InputPhoneNumber {...props} {...inputProps} />}
+      {(props) => (
+        <InputText
+          {...props}
+          {...inputProps}
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+        />
+      )}
     </InputWrapper>
   );
 }
