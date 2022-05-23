@@ -1,4 +1,4 @@
-import type Contact from '../models/Contact';
+import type { Contact } from '../models';
 import readFromStorage from './readFromStorage';
 
 /** The params required by {@link fetchContactList}. */
