@@ -1,9 +1,23 @@
 import type { InputHTMLAttributes, ReactElement } from 'react';
 import type InputProps from './InputProps';
 
-type BrowserInputProps = InputHTMLAttributes<HTMLInputElement>;
+type BrowserInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  | 'id'
+  | 'value'
+  | 'disabled'
+  | 'aria-invalid'
+  | 'aria-disabled'
+  | 'aria-labelledby'
+  | 'aria-describedby'
+  | 'aria-errormessage'
+>;
 
-export type Props = Partial<BrowserInputProps & InputProps>;
+type OverwrittenInputProps = Partial<InputProps> & {
+  value?: string;
+};
+
+export type Props = BrowserInputProps & OverwrittenInputProps;
 
 function InputText(props: Props): ReactElement {
   const {
@@ -21,8 +35,8 @@ function InputText(props: Props): ReactElement {
     <input
       {...browserProps}
       type={type}
-      className={className?.concat(' InputText') ?? 'InputText'}
       disabled={disabled}
+      className={className?.concat(' InputText') ?? 'InputText'}
       aria-invalid={invalid}
       aria-disabled={disabled}
       aria-labelledby={labelId}
