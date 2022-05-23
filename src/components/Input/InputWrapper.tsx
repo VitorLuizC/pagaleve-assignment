@@ -6,7 +6,7 @@ type Props = {
   error?: ReactNode;
   label?: ReactNode;
   disabled?: boolean;
-  children: (props: InputProps) => ReactNode;
+  children: ReactNode | ((props: InputProps) => ReactNode);
 };
 
 function InputWrapper(props: Props): ReactElement {
@@ -39,14 +39,16 @@ function InputWrapper(props: Props): ReactElement {
       )}
 
       <div className="InputWrapper__input">
-        {children({
-          hintId,
-          errorId,
-          invalid,
-          labelId,
-          disabled,
-          id: inputId,
-        })}
+        {typeof children !== 'function'
+          ? children
+          : children({
+              hintId,
+              errorId,
+              invalid,
+              labelId,
+              disabled,
+              id: inputId,
+            })}
       </div>
 
       {errorId && (
