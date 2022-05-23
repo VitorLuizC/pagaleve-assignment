@@ -13,8 +13,6 @@ describe('InputText | component | integration tests', () => {
           id="InputText"
           hintId="InputText__hint"
           labelId="InputText__label"
-          invalid={false}
-          disabled={false}
         />
       </>,
     );
@@ -28,13 +26,7 @@ describe('InputText | component | integration tests', () => {
 
   describe('when the input is disabled', () => {
     it('renders an accessible but disabled text input', () => {
-      render(
-        <InputText
-          id="InputText"
-          invalid={false}
-          disabled
-        />,
-      );
+      render(<InputText id="InputText" disabled />);
 
       expect(screen.getByRole('textbox')).toBeDisabled();
     });
@@ -42,16 +34,11 @@ describe('InputText | component | integration tests', () => {
 
   describe('when the input is invalid', () => {
     it('renders an accessible but invalid text input', () => {
-      const error = 'Please type in a valid e-mail.'
+      const error = 'Please type in a valid e-mail.';
 
       render(
         <>
-          <InputText
-            id="InputText"
-            invalid
-            errorId="InputText__error"
-            disabled={false}
-          />
+          <InputText id="InputText" errorId="InputText__error" invalid />
           <p id="InputText__error">{error}</p>
         </>,
       );

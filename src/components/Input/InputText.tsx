@@ -1,10 +1,9 @@
 import type { InputHTMLAttributes, ReactElement } from 'react';
-import type MergeAndOverwrite from '../../types/MergeAndOverwrite';
 import type InputProps from './InputProps';
 
-type DefaultInputProps = InputHTMLAttributes<HTMLInputElement>;
+type BrowserInputProps = InputHTMLAttributes<HTMLInputElement>;
 
-type Props = MergeAndOverwrite<DefaultInputProps, InputProps>;
+export type Props = Partial<BrowserInputProps & InputProps>;
 
 function InputText(props: Props): ReactElement {
   const {
@@ -12,8 +11,8 @@ function InputText(props: Props): ReactElement {
     hintId,
     errorId,
     labelId,
-    invalid,
-    disabled,
+    invalid = false,
+    disabled = false,
     className,
     ...browserProps
   } = props;
