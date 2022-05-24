@@ -1,6 +1,6 @@
-import type { Contact } from '../models/Contact';
-import sleep from './sleep';
-import updateOnStorage from './updateOnStorage';
+import type { Contact } from '../../models/Contact';
+import { sleep } from '../Async';
+import { updateOnStorage } from '../Storage';
 
 /** Parameters required by {@link createContact} service. */
 type Params = {

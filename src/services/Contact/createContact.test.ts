@@ -1,5 +1,5 @@
 import createContact from './createContact';
-import readFromStorage from './readFromStorage';
+import { readFromStorage } from '../Storage';
 
 describe('createContact | service | integration tests', () => {
   afterEach(() => window.localStorage.clear());
