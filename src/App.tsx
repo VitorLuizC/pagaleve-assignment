@@ -1,9 +1,9 @@
-import { ContactForm } from './components/contact';
+import Router from './routing/Router';
 
 function App() {
   return (
     <div className="App">
-      <ContactForm />
+      <Router />
     </div>
   );
 }
