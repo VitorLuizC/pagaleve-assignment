@@ -1,29 +1,29 @@
 import { useField } from 'formik';
 import type { ReactElement } from 'react';
-import { InputText, InputWrapper } from '../Input';
+import { InputText, InputWrapper } from '../input';
 
 type Props = {
   name: string;
 };
 
-function ContactPhoneNumberField(props: Props): ReactElement {
+function ContactEmailAddressField(props: Props): ReactElement {
   const { name } = props;
 
   const [inputProps, { error }] = useField<string>(name);
 
   return (
-    <InputWrapper error={error} label="Phone Number">
+    <InputWrapper error={error} label="Email Address">
       {(props) => (
         <InputText
           {...props}
           {...inputProps}
-          type="tel"
-          inputMode="tel"
-          autoComplete="tel"
+          type="email"
+          inputMode="email"
+          autoComplete="email"
         />
       )}
     </InputWrapper>
   );
 }
 
-export default ContactPhoneNumberField;
+export default ContactEmailAddressField;

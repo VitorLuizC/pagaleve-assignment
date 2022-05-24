@@ -1,5 +1,5 @@
 import type { ChangeEvent, ReactElement } from 'react';
-import { ContactPhoneType } from '../../models/Contact';
+import { ContactPhoneType } from '../../models/contact';
 import type InputProps from './InputProps';
 
 export type InputPhoneTypeOnChange = (

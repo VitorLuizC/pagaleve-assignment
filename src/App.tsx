@@ -1,4 +1,4 @@
-import { ContactForm } from './components/Contact';
+import { ContactForm } from './components/contact';
 
 function App() {
   return (

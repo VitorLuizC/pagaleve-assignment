@@ -1,6 +1,6 @@
 import { Formik, FormikHelpers } from 'formik';
 import { ReactElement, useCallback, useId, useMemo } from 'react';
-import { Contact, ContactPhoneType } from '../../models/Contact';
+import { Contact, ContactPhoneType } from '../../models/contact';
 import ContactEmailListField from './ContactEmailListField';
 import ContactNameField from './ContactNameField';
 import ContactPhoneListField from './ContactPhoneListField';

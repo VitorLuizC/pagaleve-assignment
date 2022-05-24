@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 import type { ChangeEvent, ReactElement } from 'react';
-import { InputText, InputWrapper } from '../Input';
+import { InputText, InputWrapper } from '../input';
 
 type Props = {
   name: string;

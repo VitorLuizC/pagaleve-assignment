@@ -1,6 +1,6 @@
-import type { Contact } from '../../models/Contact';
-import { readFromStorage } from '../Storage';
-import { sleep } from '../Async';
+import type { Contact } from '../../models/contact';
+import { readFromStorage } from '../storage';
+import { sleep } from '../async';
 
 /** The params required by {@link fetchContactList}. */
 type Params = {
