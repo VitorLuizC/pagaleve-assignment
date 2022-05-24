@@ -1,34 +1,24 @@
 import type { Contact } from '../models/Contact';
 import readFromStorage from './readFromStorage';
+import sleep from './sleep';
 
 /** The params required by {@link fetchContactList}. */
 type Params = {
   signal?: AbortSignal;
 };
 
-async function fetchContactList({ signal }: Params = {}): Promise<Contact[]> {
+async function fetchContactList(params: Params = {}): Promise<Contact[]> {
+  const { signal } = params;
+
   // TODO: Replace this mock to a the actual API call.
-
-  const time = 1000 * Math.random();
-
-  let id: number;
-
-  return new Promise<Contact[]>((resolve, reject) => {
-    id = window.setTimeout(() => {
-      const contacts = readFromStorage<Contact[]>(
-        'contacts',
-        window.localStorage,
-      );
-
-      resolve(contacts ?? []);
-    }, time);
-
-    signal?.addEventListener('abort', () => {
-      window.clearTimeout(id);
-
-      reject(new window.DOMException('AbortError', 'AbortError'));
-    });
+  await sleep({
+    signal,
+    time: 1000 * Math.random(),
   });
+
+  const contacts = readFromStorage<Contact[]>('contacts', window.localStorage);
+
+  return contacts ?? [];
 }
 
 export default fetchContactList;

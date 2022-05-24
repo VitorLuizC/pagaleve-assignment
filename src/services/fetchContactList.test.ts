@@ -38,18 +38,4 @@ describe('fetchContactList | service | unit tests', () => {
 
     expect(await fetchContactList()).toEqual(contacts);
   });
-
-  describe('when the request is aborted', () => {
-    it('throws the DOMException AbortError', () => {
-      const controller = new window.AbortController();
-
-      const promise = fetchContactList({ signal: controller.signal });
-
-      controller.abort();
-
-      return expect(promise).rejects.toEqual(
-        new window.DOMException('AbortError', 'AbortError'),
-      );
-    });
-  });
 });
