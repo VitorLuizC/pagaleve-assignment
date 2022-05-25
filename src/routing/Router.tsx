@@ -13,8 +13,10 @@ function AppRouter(): ReactElement {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Root />}>
-          <Route path="contacts" element={<Contacts />}>
+        <Route path="/">
+          <Route index element={<Root />} />
+          <Route path="contacts">
+            <Route index element={<Contacts />} />
             <Route path="create" element={<ContactsCreate />} />
             <Route path=":contactId" element={<ContactsUpdate />} />
           </Route>
