@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
+import { lazy, ReactElement } from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-const Root = () => null;
+const Root = lazy(() => import('../pages/Root'));
 
-const Contacts = () => null;
+const Contacts = lazy(() => import('../pages/Contacts'));
 
-const ContactsCreate = () => null;
+const ContactsCreate = lazy(() => import('../pages/ContactsCreate'));
 
-const ContactsUpdate = () => null;
+const ContactsUpdate = lazy(() => import('../pages/ContactsUpdate'));
 
 function AppRouter(): ReactElement {
   return (
