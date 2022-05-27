@@ -1,10 +1,10 @@
-import useTask from '../hooks/useTask';
+import { useAsyncTask } from 'react-async-task';
 import { fetchContactList } from '../services/contact';
 
 function Contacts() {
-  const { error, result, loading } = useTask(fetchContactList);
+  const { error, result, pending } = useAsyncTask(fetchContactList);
 
-  if (loading) {
+  if (pending) {
     return <p>Loading...</p>;
   }
 

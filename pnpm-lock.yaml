@@ -12,6 +12,7 @@ specifiers:
   '@types/testing-library__jest-dom': ^5.14.3
   formik: ^2.2.9
   react: ^18.1.0
+  react-async-task: ^0.1.0
   react-dom: ^18.1.0
   react-router-dom: ^6.3.0
   react-scripts: 5.0.1
@@ -30,6 +31,7 @@ dependencies:
   '@types/testing-library__jest-dom': 5.14.3
   formik: 2.2.9_react@18.1.0
   react: 18.1.0
+  react-async-task: 0.1.0_react@18.1.0
   react-dom: 18.1.0_react@18.1.0
   react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
   react-scripts: 5.0.1_kyqnejrpc2rvfrn3drtswmketi
@@ -7948,6 +7950,15 @@ packages:
       raf: 3.4.1
       regenerator-runtime: 0.13.9
       whatwg-fetch: 3.6.2
+    dev: false
+
+  /react-async-task/0.1.0_react@18.1.0:
+    resolution: {integrity: sha512-AFOOVpXafeYq3iEzSTLRSOz98TgYolwT1PV88cIXGWH9f0WcRsDSIhkTxwYGP9xMNlAOuHevWAVjjruv1NjkaA==}
+    peerDependencies:
+      react: '>= 16.8.6'
+    dependencies:
+      react: 18.1.0
+      tslib: 2.4.0
     dev: false
 
   /react-dev-utils/12.0.1_aukdbstt65dxussg2o2itdc5dm:

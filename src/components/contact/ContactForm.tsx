@@ -7,10 +7,11 @@ import ContactPhoneListField from './ContactPhoneListField';
 
 type Props = {
   contact?: Contact;
+  onSubmit: (contact: Contact) => Promise<void>;
 };
 
 function ContactForm(props: Props): ReactElement {
-  const { contact } = props;
+  const { contact, onSubmit } = props;
 
   const id = useId();
 
@@ -38,12 +39,11 @@ function ContactForm(props: Props): ReactElement {
   );
 
   const handleSubmit = useCallback(
-    (values: Contact, helpers: FormikHelpers<Contact>) => {
-      console.log(JSON.stringify(values, null, 2));
-
+    (contact: Contact, helpers: FormikHelpers<Contact>) => {
+      onSubmit(contact);
       helpers.resetForm({ values: initialValues });
     },
-    [initialValues],
+    [onSubmit, initialValues],
   );
 
   return (
