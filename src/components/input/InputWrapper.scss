@@ -1,0 +1,15 @@
+.InputWrapper {
+  &__error {
+    margin-top: 0.75rem;
+    color: #eb5757;
+  }
+
+  &__input {
+    display: block;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}

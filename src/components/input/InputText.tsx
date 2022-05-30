@@ -1,3 +1,5 @@
+import './InputText.scss';
+
 import type { InputHTMLAttributes, ReactElement } from 'react';
 import type InputProps from './InputProps';
 

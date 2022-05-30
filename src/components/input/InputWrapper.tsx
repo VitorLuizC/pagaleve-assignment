@@ -1,3 +1,5 @@
+import './InputWrapper.scss';
+
 import { ReactElement, ReactNode, useId } from 'react';
 import type InputProps from './InputProps';
 

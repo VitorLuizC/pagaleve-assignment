@@ -13,7 +13,14 @@ function ContactNameField(props: Props): ReactElement {
 
   return (
     <InputWrapper error={error} label="Name">
-      {(props) => <InputText {...props} {...inputProps} autoComplete="name" />}
+      {(props) => (
+        <InputText
+          {...props}
+          {...inputProps}
+          autoComplete="name"
+          placeholder="John Doe"
+        />
+      )}
     </InputWrapper>
   );
 }

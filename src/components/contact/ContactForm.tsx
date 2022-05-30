@@ -1,3 +1,5 @@
+import './ContactForm.scss';
+
 import { Formik, FormikHelpers } from 'formik';
 import { ReactElement, useCallback, useId, useMemo } from 'react';
 import { Contact, ContactPhoneType } from '../../models/contact';
@@ -49,7 +51,7 @@ function ContactForm(props: Props): ReactElement {
   return (
     <Formik<Contact> initialValues={initialValues} onSubmit={handleSubmit}>
       {({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
+        <form className="ContactForm" onSubmit={handleSubmit}>
           <ContactNameField name="name" />
 
           <ContactEmailListField name="emails" />
